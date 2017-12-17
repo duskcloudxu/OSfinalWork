@@ -1,0 +1,47 @@
+div {
+  box-sizing: border-box;
+}
+.row {
+  margin: 0px;
+}
+.flex {
+  display: flex;
+}
+.flex-grow {
+  flex-basis: 0px;
+  flex-grow: 1;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.flex-rightend {
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+}
+.no_padding {
+  padding: 0px !important;
+}
+#dataContainer .inputGroup {
+  margin-right: 5px;
+}
+#dataContainer .inputGroup .form-control {
+  width: 65%;
+}
+#SJBcalculate {
+  display: none;
+  margin: 10px;
+  color: #00B7FF;
+}
+#viewContainer .alert {
+  margin-bottom: 0px;
+}
+#identify {
+  position: relative;
+}
+#identify div {
+  padding-right: 30px;
+}
