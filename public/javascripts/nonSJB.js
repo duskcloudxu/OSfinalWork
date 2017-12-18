@@ -1,4 +1,7 @@
 /**
+ * Created by duskcloud on 2017/12/18.
+ */
+/**
  * Created by duskcloud on 2017/12/12.
  */
 $(document).ready(function () {
@@ -18,7 +21,7 @@ $(document).ready(function () {
     })
     $("#SJBcalculate").click(function () {
         let res = "";
-        res += ("1 ");//flag
+        res += ("0 ");//flag
         res += (numPro);
         res += (" ");
         for (let i = 0; i < numPro; i++) {

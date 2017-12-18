@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Non_SJB</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/public/stylesheets/index.css">
+</head>
+<header>
+    <% include header.ejs %>
+</header>
+<body class="container">
+<div class="panel panel-default">
+    <div class="panel-heading">Non_SJB</div>
+    <div class="row"></div>
+    <div class="panel-body">
+        <div class="row">
+            <div>请输入需要进程的数量</div>
+            <input type="text" id="numPro">
+            <button class="btn" id="SJB_pre">confirm</button>
+        </div>
+        <div class="" id="dataContainer">
+        </div>
+    </div>
+    <div class="row flex-rightend">
+        <button class="btn" id="SJBcalculate">开始运算</button>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">Result</div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">Text</div>
+                <div class="panel-body" id="stringContainer">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 flex" id="viewContainer">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 flex" id="identify">
+            </div>
+        </div>
+    </div>
+    <div class="row flex-rightend">
+        <button class="btn" id="SJBcalculate">开始运算</button>
+    </div>
+</div>
+</body>
+<script src="/node_modules/jquery/dist/jquery.js"></script>
+<script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="/public/javascripts/index.js"></script>
+<script>
+
+</script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BankerAlgorithm</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/public/stylesheets/banker.css">
+</head>
+<header>
+    <% include header.ejs %>
+</header>
+<body class="container">
+<div class="panel panel-default">
+    <div class="panel-heading">Banker algorithm</div>
+    <div class="row"></div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="flex">
+                <div class=" flex-center">
+                    <div>请输入需要进程的数量</div>
+                    <input type="text"  id="numPro" class="radius margin_10px">
+                </div>
+                <div class="flex-center">
+                    <div>请输入资源数量的种类</div>
+                    <input type="text" class="margin_10px radius" id="numRes">
+                </div>
+                <div class="flex-grow"></div>
+                <button class="btn" id="bankerPre">confirm</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="flex" id="dataContainer">
+                <div class="flex-grow panel panel-default margin_10px" id="remainRes">
+                    <div class="panel-heading">剩余资源</div>
+                    <div class="panel-body">
+
+                    </div>
+                </div>
+                <div class="flex-grow panel panel-default margin_10px" id="occupiedRes">
+                    <div class="panel-heading">占据资源</div>
+                    <div class="panel-body">
+
+                    </div>
+                </div>
+                <div class="flex-grow panel panel-default margin_10px" id="maxRes">
+                    <div class="panel-heading">需要资源</div>
+                    <div class="panel-body">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">Result</div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">Text</div>
+                <div class="panel-body" id="stringContainer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row flex-rightend">
+        <button class="btn" id="bankerCalculate">开始运算</button>
+    </div>
+</div>
+</body>
+<script src="/node_modules/jquery/dist/jquery.js"></script>
+<script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="/public/javascripts/banker.js"></script>
+<script>
+
+</script>
+</html>

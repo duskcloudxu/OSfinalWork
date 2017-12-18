@@ -1,12 +1,16 @@
 /**
+ * Created by duskcloud on 2017/12/18.
+ */
+/**
  * Created by duskcloud on 2017/12/12.
  */
 $(document).ready(function () {
     console.log(1);
     let numPro;
-    $("#SJB_pre").click(function () {
+    let numRes;
+    $("#bankerPre").click(function () {
         numPro = $("#numPro").val();
-        console.log(numPro);
+        numRes = $("#numRes").val();
         $("#dataContainer").find("div").remove();
         for (let i = 0; i < numPro; i++) {
             console.log($("#dataContainer"));
