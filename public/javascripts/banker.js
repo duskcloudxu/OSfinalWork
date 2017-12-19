@@ -11,15 +11,44 @@ $(document).ready(function () {
     $("#bankerPre").click(function () {
         numPro = $("#numPro").val();
         numRes = $("#numRes").val();
-        $("#dataContainer").find("div").remove();
-        for (let i = 0; i < numPro; i++) {
-            console.log($("#dataContainer"));
-            $("#dataContainer").append('  <div class="row flex"> <div class="flex-grow">开始时间</div> <div class="flex-grow">持续时间</div> </div> <div class="row inputGroup"> <div class="col-xs-6 no_padding"> <input type="text" class="startTime form-control"> </div> <div class="col-xs-6 no_padding"> <input type="text" class="lastingTime form-control"> </div></div>')
+        $("#remainRes").find(".panel-body").find("div").remove();
+        $("#occupiedRes").find(".panel-body").find("div").remove();
+        $("#maxRes").find(".panel-body").find("div").remove();
+        $("#remainRes").find(".panel-body").append('<div class="flex row"></div>');
+        $("#maxRes").find(".panel-body").append('<div class="flex row"></div>');
+        $("#occupiedRes").find(".panel-body").append('<div class="flex row"></div>');
+
+        $("#occupiedRes").find(".panel-body").find(".row").eq(0).append('<div class="flex-center flex-grow">' + " " + '</div>');
+        $("#maxRes").find(".panel-body").find(".row").eq(0).append('<div class="flex-center flex-grow">' + " " + '</div>');
+
+        for (let item = 1; item <= numRes; item++) {
+            $("#remainRes").find(".panel-body").find(".row").eq(0).append('<div class="flex-center flex-grow">' + item + '</div>');
+            $("#occupiedRes").find(".panel-body").find(".row").eq(0).append('<div class="flex-center flex-grow">' + item + '</div>');
+            $("#maxRes").find(".panel-body").find(".row").eq(0).append('<div class="flex-center flex-grow">' + item + '</div>');
         }
-        $("#SJBcalculate").css("display", "block");
-    })
+        $("#remainRes").find(".panel-body").append('<div class="flex row"></div>');
+        for (let item = 1; item <= numRes; item++) {
+            $("#remainRes").find(".panel-body").find(".row").eq(1).append('<input class="flex-center radius flex-grow"/>');
+        }
+        for (let i = 1; i <= numPro; i++) {
+            $("#maxRes").find(".panel-body").append('<div class="flex row"></div>');
+            $("#occupiedRes").find(".panel-body").append('<div class="flex row"></div>');
+            $("#occupiedRes").find(".panel-body").find(".row").eq(i).append('<div class="flex-center flex-grow">' +"P"+ i + '</div>');
+            $("#maxRes").find(".panel-body").find(".row").eq(i).append('<div class="flex-center flex-grow">' + "P"+ i + '</div>');
+            for (let j = 1; j <= numRes; j++) {
+                $("#occupiedRes").find(".panel-body").find(".row").eq(i).append('<input class="flex-center radius flex-grow"/>');
+                $("#maxRes").find(".panel-body").find(".row").eq(i).append('<input class="flex-center radius flex-grow"/>');
+            }
+        }
+
+        // for (let i = 0; i < numPro; i++) {
+        //     console.log($("#dataContainer"));
+        //     $("#dataContainer").append('  <div class="row flex"> <div class="flex-grow">开始时间</div> <div class="flex-grow">持续时间</div> </div> <div class="row inputGroup"> <div class="col-xs-6 no_padding"> <input type="text" class="startTime form-control"> </div> <div class="col-xs-6 no_padding"> <input type="text" class="lastingTime form-control"> </div></div>')
+        // }
+        // $("#SJBcalculate").css("display", "block");
+    });
     $("#numPro").click(function () {
-    })
+    });
     $("#SJBcalculate").click(function () {
         let res = "";
         res += ("1 ");//flag
