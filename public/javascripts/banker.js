@@ -33,63 +33,54 @@ $(document).ready(function () {
         for (let i = 1; i <= numPro; i++) {
             $("#maxRes").find(".panel-body").append('<div class="flex row"></div>');
             $("#occupiedRes").find(".panel-body").append('<div class="flex row"></div>');
-            $("#occupiedRes").find(".panel-body").find(".row").eq(i).append('<div class="flex-center flex-grow">' +"P"+ i + '</div>');
-            $("#maxRes").find(".panel-body").find(".row").eq(i).append('<div class="flex-center flex-grow">' + "P"+ i + '</div>');
+            $("#occupiedRes").find(".panel-body").find(".row").eq(i).append('<div class="flex-center flex-grow">' + "P" + i + '</div>');
+            $("#maxRes").find(".panel-body").find(".row").eq(i).append('<div class="flex-center flex-grow">' + "P" + i + '</div>');
             for (let j = 1; j <= numRes; j++) {
                 $("#occupiedRes").find(".panel-body").find(".row").eq(i).append('<input class="flex-center radius flex-grow"/>');
                 $("#maxRes").find(".panel-body").find(".row").eq(i).append('<input class="flex-center radius flex-grow"/>');
             }
-        }
 
-        // for (let i = 0; i < numPro; i++) {
-        //     console.log($("#dataContainer"));
-        //     $("#dataContainer").append('  <div class="row flex"> <div class="flex-grow">开始时间</div> <div class="flex-grow">持续时间</div> </div> <div class="row inputGroup"> <div class="col-xs-6 no_padding"> <input type="text" class="startTime form-control"> </div> <div class="col-xs-6 no_padding"> <input type="text" class="lastingTime form-control"> </div></div>')
-        // }
-        // $("#SJBcalculate").css("display", "block");
+        }
+        $("#bankerRandom").css("display", "block");
     });
-    $("#numPro").click(function () {
+    $("#bankerRandom").click(function () {
+        for (let i = 2; i < $(".container").find('input').length; i++) {
+            $("body").find('input').eq(i).val(Math.floor(Math.random() * (10 - 1) + 1));
+        }
+    })
+    $("#bankerStandard").click(function () {
+        let standArr = [5, 3, 3, 3, 2, 0, 1, 0, 2, 0, 0, 3, 0, 2, 2, 1, 1, 0, 0, 2, 7, 5, 3, 3, 2, 2, 9, 0, 2, 2, 2, 2, 4, 3, 3];
+        for (let i = 0; i < $(".container").find('input').length; i++) {
+            $("body").find('input').eq(i).val(standArr[i]);
+        }
+        $("#bankerPre").click();
+        for (let i = 2; i < $(".container").find('input').length; i++) {
+            $("body").find('input').eq(i).val(standArr[i]);
+        }
     });
-    $("#SJBcalculate").click(function () {
+    $("#bankerCalculate").click(function () {
         let res = "";
-        res += ("1 ");//flag
-        res += (numPro);
-        res += (" ");
-        for (let i = 0; i < numPro; i++) {
-            res += ($(".inputGroup").eq(i).find(".startTime").val());
-            res += (" ");
-            res += ($(".inputGroup").eq(i).find(".lastingTime").val());
-            res += (" ");
+        for (let i = 0; i < $(".container").find('input').length; i++) {
+            res += ($("body").find('input').eq(i).val() + " ");
         }
         console.log(res);
         $.ajax({
-            url: 'http://localhost:3000/home',
+            url: 'http://localhost:3000/test',
             type: 'POST',
             data: {
                 res: res,
             },
             success: function (data) {
-                $("#viewContainer").find("div").remove();
-                $("#identify").find("div").remove();
+                console.log(data);
                 $("#stringContainer").find("div").remove();
-
-                let seqStr = data.seq;
-                let seqArr = seqStr.split("|");
-                let cur = 0;
-                for (let item = 0; item < seqArr.length; item++) {
-                    let itemArr = seqArr[item].split(",");
-                    console.log(itemArr);
-                    if (itemArr[0] === "0") continue;
-                    $("#viewContainer").append('<div class="flex-grow flex-center alert alert-success">' + 'P' + itemArr[1] + '</div>');
-                    $("#identify").append('<div class="flex-grow">' + cur + '</div>');
-                    $("#viewContainer").find(".alert").eq(item).css("flex-grow", itemArr[0]);
-                    $("#identify").find("div").eq(item).css("flex-grow", itemArr[0]);
-                    cur += parseInt(itemArr[0]);
-                }
-                $("#identify").append('<div style="position: absolute; right: 0" >' + cur + '</div>');
-                let stringArr = data.text.split("\n");
+                let stringArr = data.split("\n");
                 console.log(stringArr);
                 for (item in stringArr) {
-                    $("#stringContainer").append('<div>' + stringArr[item] + '</div>');
+                    if (item != stringArr.length-1)
+                        $("#stringContainer").append('<div class="alert alert-success">' + stringArr[item] + '</div>');
+                }
+                if (data === "") {
+                    $("#stringContainer").append('<div>' + "安全序列不存在！" + '</div>');
                 }
             },
             error: function () {

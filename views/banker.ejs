@@ -25,7 +25,17 @@
                     <input type="text" class="margin_10px radius" id="numRes">
                 </div>
                 <div class="flex-grow"></div>
-                <button class="btn" id="bankerPre">confirm</button>
+
+                <button class="btn" id="bankerPre">生成表格</button>
+            </div>
+        </div>
+        <div class="row" id="optionMenu">
+            <div class="row panel panel-default margin_10px">
+                <div class="panel-heading">选项</div>
+                <div class=" flex panel-body">
+                    <button class="btn" id="bankerRandom">随机</button>
+                    <button class="btn" id="bankerStandard">标准</button>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -36,8 +46,6 @@
 
                 </div>
             </div>
-
-
         </div>
         <div class="row panel panel-default margin_10px" id="occupiedRes">
             <div class="panel-heading">占据资源</div>
@@ -46,7 +54,7 @@
             </div>
         </div>
         <div class="row panel panel-default margin_10px" id="maxRes">
-            <div class="panel-heading">需要资源</div>
+            <div class="panel-heading">最大需要资源</div>
             <div class="panel-body">
 
             </div>
@@ -70,6 +78,7 @@
         <button class="btn" id="bankerCalculate">开始运算</button>
     </div>
 </div>
+
 </body>
 <script src="/node_modules/jquery/dist/jquery.js"></script>
 <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
