@@ -24,6 +24,7 @@ $(document).ready(function () {
         res += ("0 ");//flag
         res += (numPro);
         res += (" ");
+
         for (let i = 0; i < numPro; i++) {
             res += ($(".inputGroup").eq(i).find(".startTime").val());
             res += (" ");
