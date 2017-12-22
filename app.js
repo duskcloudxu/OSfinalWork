@@ -61,7 +61,7 @@ app.use("/home", function (req, res, next) {
         };
         res.send(resArr).toString();
       });
-    }
+    };
     p1(p2);
   };
   let fun = function (read) {//执行exe文件
@@ -112,7 +112,51 @@ app.use("/test",function (req,res,next) {
     fun(read);
 });
 
-
+app.use("/RR",function (req,res,next) {
+  console.log(req.body);
+  fs.writeFile(path.join(__dirname, 'inData.txt'), req.body.res, function (err) {
+    if (err) {
+      return console.log(err);
+    }
+    console.log("The file was saved!");
+  });
+  let read = function () {
+    let p1 = function (callback) {
+      fs.readFile('outData.txt', function (err, data) {
+        if (err) {
+          return console.error(err);
+        }
+        data = iconv.decode(data, "gbk");//使用插件消除乱码
+        callback(data.toString());
+      });
+    };
+    let p2 = function(formerData){
+      fs.readFile('putseq.txt', function (err, data) {
+        if (err) {
+          return console.error(err);
+        }
+        data = iconv.decode(data, "gbk");//使用插件消除乱码
+        let resArr={
+          text:formerData,
+          seq:data.toString(),
+        };
+        res.send(resArr).toString();
+      });
+    };
+    p1(p2);
+  };
+  let fun = function (read) {//执行exe文件
+    console.log("fun() start");
+    exec('start RR.exe', [], {shell: process.env.ComSpec, encoding: 'gbk'}, (error, stdout, stderr) => {
+      stdout = iconv.decode(stdout, "gbk");
+      stderr = iconv.decode(stderr, "gbk");
+      console.log(stderr);
+      console.log(stdout);
+      read();
+    });
+  };
+  fun(read);
+});
 
 app.use(function (req, res, next) {
   let err = new Error('Not Found');

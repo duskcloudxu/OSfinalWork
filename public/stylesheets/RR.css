@@ -7,6 +7,9 @@ div {
 .row {
   margin: 0px;
 }
+.margin_10px {
+  margin: 10px;
+}
 .flex {
   display: flex;
 }
@@ -34,7 +37,7 @@ div {
 #dataContainer .inputGroup .form-control {
   width: 65%;
 }
-#SJBcalculate {
+#RRcalculate {
   display: none;
   margin: 10px;
   color: #00B7FF;
@@ -47,4 +50,7 @@ div {
 }
 #identify div {
   padding-right: 30px;
+}
+#RR_pre {
+  max-height: 30px;
 }

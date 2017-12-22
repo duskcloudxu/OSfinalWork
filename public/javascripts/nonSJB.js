@@ -7,7 +7,7 @@
 $(document).ready(function () {
     console.log(1);
     let numPro;
-    $("#SJB_pre").click(function () {
+    $("#NonSJB_pre").click(function () {
         numPro = $("#numPro").val();
         console.log(numPro);
         $("#dataContainer").find("div").remove();
@@ -15,11 +15,11 @@ $(document).ready(function () {
             console.log($("#dataContainer"));
             $("#dataContainer").append('  <div class="row flex"> <div class="flex-grow">开始时间</div> <div class="flex-grow">持续时间</div> </div> <div class="row inputGroup"> <div class="col-xs-6 no_padding"> <input type="text" class="startTime form-control"> </div> <div class="col-xs-6 no_padding"> <input type="text" class="lastingTime form-control"> </div></div>')
         }
-        $("#SJBcalculate").css("display", "block");
+        $("#NonSJBcalculate").css("display", "block");
     })
     $("#numPro").click(function () {
     })
-    $("#SJBcalculate").click(function () {
+    $("#NonSJBcalculate").click(function () {
         let res = "";
         res += ("0 ");//flag
         res += (numPro);

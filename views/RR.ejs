@@ -2,28 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>NonSJB</title>
+    <title>RR</title>
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="/public/stylesheets/nonSJB.css">
+    <link rel="stylesheet" href="/public/stylesheets/RR.css">
 </head>
 <header>
     <% include header.ejs %>
 </header>
 <body class="container">
 <div class="panel panel-default">
-    <div class="panel-heading">NonSJB</div>
+    <div class="panel-heading">RR</div>
     <div class="row"></div>
     <div class="panel-body">
         <div class="row">
-            <div>请输入需要进程的数量</div>
-            <input type="text" id="numPro">
-            <button class="btn" id="NonSJB_pre">confirm</button>
+            <div class="flex">
+                <div class="flex-center margin_10px">
+                    <div>请输入需要进程的数量</div>
+                    <input type="text" class="margin_10px" id="numPro">
+                    <div>请输入时间片长度</div>
+                    <input type="text" class="margin_10px" id="numSli">
+                </div>
+                <div class="flex-center">
+                    <button class="btn" id="RR_pre">confirm</button>
+                </div>
+            </div>
         </div>
         <div class="" id="dataContainer">
         </div>
     </div>
     <div class="row flex-rightend">
-        <button class="btn" id="NonSJBcalculate">开始运算</button>
+        <button class="btn" id="RRcalculate">开始运算</button>
     </div>
 </div>
 <div class="panel panel-default">
@@ -46,13 +54,13 @@
         </div>
     </div>
     <div class="row flex-rightend">
-        <button class="btn" id="NonSJBcalculate">开始运算</button>
+        <button class="btn" id="RRcalculate">开始运算</button>
     </div>
 </div>
 </body>
 <script src="/node_modules/jquery/dist/jquery.js"></script>
 <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
-<script src="/public/javascripts/nonSJB.js"></script>
+<script src="/public/javascripts/RR.js"></script>
 <script>
 
 </script>

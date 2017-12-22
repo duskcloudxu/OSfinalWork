@@ -21,6 +21,10 @@ router.get('/nonSJB', function (req, res, next) {
     res.render('nonSJB', {title: 'Express'});
     console.log(req.body);
 });
+router.get('/RR', function (req, res, next) {
+  res.render('RR', {title: 'Express'});
+  console.log(req.body);
+});
 router.get('/banker', function (req, res, next) {
     res.render('banker', {title: 'Express'});
 });

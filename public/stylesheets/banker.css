@@ -1,9 +1,6 @@
 div {
   box-sizing: border-box;
 }
-.panel .panel-heading {
-  background-color: #FFFFFF;
-}
 .row {
   margin: 0px;
 }
@@ -28,23 +25,25 @@ div {
 .no_padding {
   padding: 0px !important;
 }
+.margin_10px {
+  margin: 10px;
+}
+.radius {
+  border-radius: 5px;
+}
 #dataContainer .inputGroup {
   margin-right: 5px;
 }
 #dataContainer .inputGroup .form-control {
   width: 65%;
 }
-#SJBcalculate {
-  display: none;
+input {
+  overflow: hidden;
   margin: 10px;
-  color: #00B7FF;
 }
-#viewContainer .alert {
-  margin-bottom: 0px;
+#bankerRandom {
+  display: none;
 }
-#identify {
-  position: relative;
-}
-#identify div {
-  padding-right: 30px;
+.btn {
+  margin: 5px;
 }
