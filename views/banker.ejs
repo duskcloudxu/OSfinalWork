@@ -18,11 +18,11 @@
             <div class="flex">
                 <div class=" flex-center">
                     <div>请输入需要进程的数量</div>
-                    <input type="text" id="numPro" class="radius margin_10px">
+                    <input type="text" id="numPro" class="radius margin_10px normal">
                 </div>
                 <div class="flex-center">
                     <div>请输入资源数量的种类</div>
-                    <input type="text" class="margin_10px radius" id="numRes">
+                    <input type="text" class="margin_10px radius  normal" id="numRes">
                 </div>
                 <div class="flex-grow"></div>
 
@@ -32,9 +32,22 @@
         <div class="row" id="optionMenu">
             <div class="row panel panel-default margin_10px">
                 <div class="panel-heading">选项</div>
-                <div class=" flex panel-body">
-                    <button class="btn" id="bankerRandom">随机</button>
-                    <button class="btn" id="bankerStandard">标准</button>
+                <div class="panel-body">
+                    <div class="row flex">
+                        <button class="btn" id="bankerRandom">随机</button>
+                        <button class="btn" id="bankerStandard">标准</button>
+                    </div>
+                    <div class="row flex flex-center">
+                        <div class="">进程名</div>
+                        <input id="requestID">
+                    </div>
+                    <div class="row" id="requestContainer">
+                        <div class="row flex"></div>
+                        <div class="row flex"></div>
+                    </div>
+                    <div class="row flex flex-rightend">
+                        <button class="btn " id="bankerRequest">请求</button>
+                    </div>
                 </div>
             </div>
         </div>
