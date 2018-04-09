@@ -5,3 +5,7 @@
 并启动相应的可执行文件，里面是用C++写的算法233毕竟这样比较省时间。
 
 格式写的乱七八糟的 勉强能跑而已233
+*** 
+运行界面：
+![image](https://github.com/duskcloudxu/OSfinalWork/blob/master/image/1.png)
+
